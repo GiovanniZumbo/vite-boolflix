@@ -24,10 +24,11 @@ export default {
 <template>
     <h3>MAINMOVIESCARDSLIST</h3>
 
-    <div class="cardlist">
-        <MainMovieCard v-for="movie in store.movieList" :movie="movie" />
-
-    </div>
+    <ul class="cardlist" v-for="movie in store.movieList">
+        <li>
+            <MainMovieCard :movie="movie" />
+        </li>
+    </ul>
 
 
 </template>

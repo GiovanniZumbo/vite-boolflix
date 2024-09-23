@@ -23,10 +23,12 @@ export default {
 <template>
     <h3>MAINSERIESCARDSLIST</h3>
 
-    <div class="cardlist">
-        <MainSeriesCard v-for="series in store.seriesList" :series="series" />
+    <ul class="cardlist">
+        <li v-for="series in store.seriesList">
+            <MainSeriesCard :series="series" />
+        </li>
 
-    </div>
+    </ul>
 
 </template>
 

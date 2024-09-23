@@ -34,6 +34,10 @@ export default {
                     return `fi-${this.movie.original_language}`;
 
             }
+        },
+
+        posterImage() {
+            return `https://image.tmdb.org/t/p/w154${this.movie.poster_path}`;
         }
     },
 }
@@ -43,6 +47,8 @@ export default {
     <h4>MAIN MOVIE CARD</h4>
 
     <div class="card">
+        <img :src="posterImage" alt="">
+
         <p class="title">Titolo: "{{ movie.title }}" </p>
         <p class="og-title">Titolo originale: "{{ movie.original_title }}</p>
 
@@ -53,6 +59,10 @@ export default {
 
 <style lang="scss" scoped>
 @use "../styles/generics.scss" as *;
+
+.card {
+    width: 300px;
+}
 
 .fi {
     box-shadow: 0 0 10px gray;

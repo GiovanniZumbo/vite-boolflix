@@ -12,8 +12,8 @@ export default {
     },
 
     methods: {
-        triggerCallForMovies(request) {
-            this.$emit('callForMovies', request);
+        triggerCallDatabase(request) {
+            this.$emit('callDatabase', request);
         }
     }
 
@@ -25,9 +25,9 @@ export default {
     <h1>HEADER</h1>
     <div class="input-group mb-3 w-25">
         <input type="text" class="form-control" placeholder="Search..." v-model="userRequest"
-            @keyup.enter="triggerCallForMovies(userRequest)">
+            @keyup.enter="triggerCallDatabase(userRequest)">
         <button class="btn btn-outline-secondary" type="button" id="button-addon2"
-            @click="triggerCallForMovies(userRequest)">Search
+            @click="triggerCallDatabase(userRequest)">Search
         </button>
     </div>
 

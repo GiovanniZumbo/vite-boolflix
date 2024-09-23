@@ -18,11 +18,11 @@ export default {
 
   methods: {
 
-    //API call to find the requested movies
     getMoviesList(requestquery) {
 
       console.log(requestquery);
 
+      //API call to find the requested movies
       axios.get(this.moviesUrlApi, {
         params: {
           api_key: "c9c806bca4bbfddd92bba4b4d36d3a53",
@@ -34,6 +34,8 @@ export default {
           this.store.movieList = response.data.results;
           console.log("MOVIES:", this.store.movieList)
         })
+
+      //API call to find the requested series
 
       axios.get(this.seriesUrlApi, {
         params: {
@@ -60,7 +62,7 @@ export default {
 
 <template>
 
-  <AppHeader @call-for-movies="getMoviesList" />
+  <AppHeader @call-database="getMoviesList" />
   <AppMain />
 </template>
 
