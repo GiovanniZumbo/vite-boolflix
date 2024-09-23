@@ -21,14 +21,14 @@ export default {
 </script>
 
 <template>
-    <h3>MAINSERIESCARDSLIST</h3>
+    <h3>SERIES</h3>
 
-    <ul class="cardlist">
-        <li v-for="series in store.seriesList">
+    <div class="cardlist d-flex row row-cols-5 g-3">
+        <div class="col" v-for="series in store.seriesList">
             <MainSeriesCard :series="series" />
-        </li>
+        </div>
 
-    </ul>
+    </div>
 
 </template>
 

@@ -37,7 +37,7 @@ export default {
         },
 
         posterImage() {
-            return `https://image.tmdb.org/t/p/w154${this.movie.poster_path}`;
+            return `https://image.tmdb.org/t/p/w342${this.movie.poster_path}`;
         },
 
         integerVote() {
@@ -48,16 +48,19 @@ export default {
 </script>
 
 <template>
-    <h4>MAIN MOVIE CARD</h4>
 
-    <div class="card">
-        <img :src="posterImage" alt="">
+    <div class="card position-relative top-0 start-0">
+        <div class=" card-poster">
+            <img :src="posterImage" class="card-img-top" alt="...">
+        </div>
+        <div class="card-body position-absolute top-0 start-0 text-light">
+            <p class="title"><b>Titolo</b>: "{{ movie.title }}" </p>
+            <p class="og-title">Titolo originale: "{{ movie.original_title }}</p>
 
-        <p class="title">Titolo: "{{ movie.title }}" </p>
-        <p class="og-title">Titolo originale: "{{ movie.original_title }}</p>
-
-        <p class="lang">Lingua: <span class="fi" :class="languageClass"> </span> </p>
-        <p class="vote">Voto: <i class="fa-solid fa-star" v-for="n in integerVote"></i></p>
+            <p class="lang">Lingua: <span class="fi" :class="languageClass"> </span> </p>
+            <p class="vote">Voto: <i class="fa-solid fa-star" v-for="n in integerVote"></i></p>
+            <p class="overview">{{ movie.overview }}</p>
+        </div>
     </div>
 </template>
 
@@ -69,8 +72,32 @@ export default {
 }
 
 .card {
-    width: 300px;
+    border-radius: 25%;
+
+    transition: 0.2s ease-in-out;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    transition: 1s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+        transform: rotateY(0.5turn);
+    }
 }
+
+.card-poster,
+.card-body {
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: 1s ease-in-out;
+}
+
+.card-body {
+    transform: rotateY(0.5turn);
+    background-color: rgb(46, 45, 45);
+}
+
 
 .fi {
     box-shadow: 0 0 10px gray;

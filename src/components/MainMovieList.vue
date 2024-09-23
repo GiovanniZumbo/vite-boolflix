@@ -22,13 +22,13 @@ export default {
 </script>
 
 <template>
-    <h3>MAINMOVIESCARDSLIST</h3>
 
-    <ul class="cardlist" v-for="movie in store.movieList">
-        <li>
+    <h2>MOVIES </h2>
+    <div class="cardlist d-flex row row-cols-5 g-3">
+        <div class="col" v-for="movie in store.movieList">
             <MainMovieCard :movie="movie" />
-        </li>
-    </ul>
+        </div>
+    </div>
 
 
 </template>

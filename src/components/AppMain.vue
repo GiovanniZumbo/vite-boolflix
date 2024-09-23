@@ -20,9 +20,10 @@ export default {
 </script>
 
 <template>
-    <h2>-MAIN-</h2>
-    <MainMovieList />
-    <MainSeriesList />
+    <div class="container">
+        <MainMovieList />
+        <MainSeriesList />
+    </div>
 </template>
 
-<style scoped></style>
+<style lang="scss" scoped></style>

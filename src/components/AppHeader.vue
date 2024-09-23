@@ -22,16 +22,26 @@ export default {
 </script>
 
 <template>
-    <h1>HEADER</h1>
-    <div class="input-group mb-3 w-25">
-        <input type="text" class="form-control" placeholder="Search..." v-model="userRequest"
-            @keyup.enter="triggerCallDatabase(userRequest)">
-        <button class="btn btn-outline-secondary" type="button" id="button-addon2"
-            @click="triggerCallDatabase(userRequest)">Search
-        </button>
-    </div>
+
+    <nav id="header" class="navbar bg-dark position-sticky top-0 start-0">
+        <div class="container-fluid d-flex justify-content-between">
+            <a class="navbar-brand text-danger">BOOTFLIX</a>
+            <div class="d-flex" id="header-right">
+                <input class="form-control me-2" type="text" placeholder="Search..." v-model="userRequest"
+                    @keyup.enter="triggerCallDatabase(userRequest)">
+                <button class="btn btn-outline-danger" type="button"
+                    @click="triggerCallDatabase(userRequest)">Search</button>
+            </div>
+        </div>
+    </nav>
 
 
 </template>
 
-<style scoped></style>
+<style lang="scss" scoped>
+#header {
+    height: 4rem;
+    z-index: 1;
+
+}
+</style>

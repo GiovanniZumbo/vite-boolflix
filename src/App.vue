@@ -62,10 +62,21 @@ export default {
 
 <template>
 
-  <AppHeader @call-database="getMoviesList" />
-  <AppMain />
+  <body>
+
+    <AppHeader @call-database="getMoviesList" />
+    <AppMain />
+
+  </body>
 </template>
 
-<style lang="scss">
-@use "bootstrap/scss/bootstrap.scss" as *;
+<style lang="scss" scoped>
+@use "./styles/generics.scss" as *;
+@use "./styles/variables.scss" as variables;
+
+body {
+  min-height: 100vh;
+  position: relative;
+  background-color: var(--gray-bg);
+}
 </style>

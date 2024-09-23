@@ -5,6 +5,10 @@ $fa-font-path: "node_modules/@fortawesome/fontawesome-free/WebFonts" !default;
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/regular.scss";
 @import "../node_modules/flag-icons/css/flag-icons.min.css";
 
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+
+
 img{
     max-width: 100%;
 }

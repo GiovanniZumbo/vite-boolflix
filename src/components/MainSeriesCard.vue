@@ -38,7 +38,7 @@ export default {
         },
 
         posterImage() {
-            return `https://image.tmdb.org/t/p/w154${this.series.poster_path}`;
+            return `https://image.tmdb.org/t/p/w342${this.series.poster_path}`;
         },
 
         integerVote() {
@@ -53,23 +53,30 @@ export default {
 </script>
 
 <template>
-    <h4>MAIN SERIES CARD</h4>
 
-    <div class="card">
-        <img :src="posterImage" alt="">
-        <p class="title">Titolo: "{{ series.name }}" </p>
-        <p class="og-title">Titolo originale: "{{ series.original_name }}</p>
+    <div class="card position-relative top-0 start-0">
+        <div class=" card-poster">
+            <img :src="posterImage" class="card-img-top" alt="...">
+        </div>
+        <div class="card-body position-absolute top-0 start-0">
+            <p class="title">Titolo: "{{ series.name }}" </p>
+            <p class="og-title">Titolo originale: "{{ series.original_name }}</p>
 
-        <p class="lang">Lingua: <span class="fi" :class="languageClass"> </span> </p>
-        <p class="vote">Voto: <i class="fa-solid fa-star" v-for="n in integerVote"></i></p>
+            <p class="lang">Lingua: <span class="fi" :class="languageClass"> </span> </p>
+            <p class="vote">Voto: <i class="fa-solid fa-star" v-for="n in integerVote"></i></p>
+            <p class="overview">{{ series.overview }}</p>
+        </div>
     </div>
+
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @use "../styles/generics.scss" as *;
 
-.card {
-    width: 300px;
+.overview {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .fi {
