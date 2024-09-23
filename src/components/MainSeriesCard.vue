@@ -54,16 +54,17 @@ export default {
 
 <template>
 
-    <div class="card position-relative top-0 start-0">
-        <div class=" card-poster">
-            <img :src="posterImage" class="card-img-top" alt="...">
+    <div class="card position-relative top-0 start-0 w-100 h-100 bg-dark">
+        <div class=" card-poster align-content-center">
+            <img src="../assets/boolflix_logo_small.png" alt="" v-if="this.series.poster_path === null">
+            <img :src="posterImage" class="card-img-top" alt="..." v-else>
         </div>
         <div class="card-body position-absolute top-0 start-0 text-light">
-            <p class="title">Titolo: "{{ series.name }}" </p>
-            <p class="og-title">Titolo originale: "{{ series.original_name }}"</p>
+            <p class="title"><b>Titolo</b>: "{{ series.name }}" </p>
+            <p class="og-title"><b>Titolo originale</b>: "{{ series.original_name }}"</p>
 
-            <p class="lang">Lingua: <span class="fi" :class="languageClass"> </span> </p>
-            <p class="vote">Voto: <i class="fa-solid fa-star" v-for="n in integerVote"></i></p>
+            <p class="lang"><b>Lingua</b>: <span class="fi" :class="languageClass"> </span> </p>
+            <p class="vote"><b>Voto</b>: <i class="fa-solid fa-star" v-for="n in integerVote"></i></p>
             <p class="overview">"{{ series.overview }}"</p>
         </div>
     </div>

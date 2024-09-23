@@ -49,16 +49,17 @@ export default {
 
 <template>
 
-    <div class="card position-relative top-0 start-0 w-100">
-        <div class=" card-poster">
-            <img :src="posterImage" class="card-img-top" alt="...">
+    <div class="card position-relative top-0 start-0 w-100 h-100 bg-dark">
+        <div class=" card-poster align-content-center">
+            <img src="../assets/boolflix_logo_small.png" alt="" v-if="this.movie.poster_path === null">
+            <img :src="posterImage" class="card-img-top" alt="..." v-else>
         </div>
         <div class="card-body position-absolute top-0 start-0 text-light">
             <p class="title"><b>Titolo</b>: "{{ movie.title }}" </p>
-            <p class="og-title">Titolo originale: "{{ movie.original_title }}</p>
+            <p class="og-title"><b>Titolo originale</b>: "{{ movie.original_title }}</p>
 
-            <p class="lang">Lingua: <span class="fi" :class="languageClass"> </span> </p>
-            <p class="vote">Voto: <i class="fa-solid fa-star" v-for="n in integerVote"></i></p>
+            <p class="lang"><b>Lingua</b>: <span class="fi" :class="languageClass"> </span> </p>
+            <p class="vote"><b>Voto</b>: <i class="fa-solid fa-star" v-for="n in integerVote"></i></p>
             <p class="overview">"{{ movie.overview }}"</p>
         </div>
     </div>
@@ -72,8 +73,8 @@ export default {
 }
 
 .card {
-    height: 40rem;
-    border-radius: 25%;
+
+    border-radius: 25px;
 
     transition: 0.2s ease-in-out;
     transform-style: preserve-3d;
