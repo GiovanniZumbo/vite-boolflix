@@ -26,6 +26,8 @@ export default {
                     return "fi-kr";
                 case "zh":
                     return "fi-cn";
+                case "da":
+                    return "fi-dk";
                 case "hi", "fa":
                     return "fi-xx"
 
@@ -59,7 +61,7 @@ export default {
         <p class="og-title">Titolo originale: "{{ series.original_name }}</p>
 
         <p class="lang">Lingua: <span class="fi" :class="languageClass"> </span> </p>
-        <p class=" vote">Voto: {{ integerVote }}</p>
+        <p class="vote">Voto: <i class="fa-solid fa-star" v-for="n in integerVote"></i></p>
     </div>
 </template>
 

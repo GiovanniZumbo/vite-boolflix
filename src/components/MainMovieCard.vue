@@ -57,12 +57,16 @@ export default {
         <p class="og-title">Titolo originale: "{{ movie.original_title }}</p>
 
         <p class="lang">Lingua: <span class="fi" :class="languageClass"> </span> </p>
-        <p class="vote">Voto: {{ integerVote }}</p>
+        <p class="vote">Voto: <i class="fa-solid fa-star" v-for="n in integerVote"></i></p>
     </div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @use "../styles/generics.scss" as *;
+
+.fa-star {
+    color: gold;
+}
 
 .card {
     width: 300px;

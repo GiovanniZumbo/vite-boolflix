@@ -33,5 +33,5 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-@use "../styles/generics.scss" as *
+@use "../styles/generics.scss" as *;
 </style>
