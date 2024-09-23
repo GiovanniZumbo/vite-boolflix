@@ -10,7 +10,8 @@ import { store } from './store';
 export default {
   data() {
     return {
-      urlApi: "https://api.themoviedb.org/3/search/movie",
+      moviesUrlApi: "https://api.themoviedb.org/3/search/movie",
+      seriesUrlApi: "https://api.themoviedb.org/3/search/tv",
       store
     }
   },
@@ -22,7 +23,7 @@ export default {
 
       console.log(requestquery);
 
-      axios.get(this.urlApi, {
+      axios.get(this.moviesUrlApi, {
         params: {
           api_key: "c9c806bca4bbfddd92bba4b4d36d3a53",
           query: requestquery,
@@ -31,7 +32,21 @@ export default {
       })
         .then(response => {
           this.store.movieList = response.data.results;
+          console.log("MOVIES:", this.store.movieList)
         })
+
+      axios.get(this.seriesUrlApi, {
+        params: {
+          api_key: "c9c806bca4bbfddd92bba4b4d36d3a53",
+          query: requestquery,
+          language: "it-IT",
+        }
+      })
+        .then(result => {
+          this.store.seriesList = result.data.results;
+          console.log("SERIES:", this.store.seriesList);
+        })
+
     }
 
   },

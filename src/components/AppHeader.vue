@@ -14,7 +14,6 @@ export default {
     methods: {
         triggerCallForMovies(request) {
             this.$emit('callForMovies', request);
-            console.log(request)
         }
     }
 

@@ -6,6 +6,7 @@ export const store = reactive({
     data(){
             return {
                 movieList: "",
+                seriesList: "",
         }
     },
 

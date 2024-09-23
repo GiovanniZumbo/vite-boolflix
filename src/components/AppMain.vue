@@ -2,6 +2,7 @@
 
 
 import MainMovieList from './MainMovieList.vue';
+import MainSeriesList from './MainSeriesList.vue';
 
 
 export default {
@@ -12,7 +13,8 @@ export default {
     },
 
     components: {
-        MainMovieList
+        MainMovieList,
+        MainSeriesList
     }
 }
 </script>
@@ -20,6 +22,7 @@ export default {
 <template>
     <h2>-MAIN-</h2>
     <MainMovieList />
+    <MainSeriesList />
 </template>
 
 <style scoped></style>

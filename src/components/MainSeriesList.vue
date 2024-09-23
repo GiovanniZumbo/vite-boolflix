@@ -4,7 +4,7 @@
 import { store } from '../store';
 
 //components
-import MainMovieCard from './MainMovieCard.vue';
+import MainSeriesCard from './MainSeriesCard.vue';
 
 export default {
     data() {
@@ -14,21 +14,19 @@ export default {
     },
 
     components: {
-        MainMovieCard
+        MainSeriesCard
     },
-
 
 }
 </script>
 
 <template>
-    <h3>MAINMOVIESCARDSLIST</h3>
+    <h3>MAINSERIESCARDSLIST</h3>
 
     <div class="cardlist">
-        <MainMovieCard v-for="movie in store.movieList" :movie="movie" />
+        <MainSeriesCard v-for="series in store.seriesList" :series="series" />
 
     </div>
-
 
 </template>
 
