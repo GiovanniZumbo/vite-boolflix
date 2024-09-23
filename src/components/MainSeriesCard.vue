@@ -37,8 +37,14 @@ export default {
 
         posterImage() {
             return `https://image.tmdb.org/t/p/w154${this.series.poster_path}`;
+        },
+
+        integerVote() {
+            return Math.ceil(this.series.vote_average / 2);
         }
     }
+
+
 
 
 }
@@ -53,7 +59,7 @@ export default {
         <p class="og-title">Titolo originale: "{{ series.original_name }}</p>
 
         <p class="lang">Lingua: <span class="fi" :class="languageClass"> </span> </p>
-        <p class=" vote">Voto: {{ series.vote_average }}</p>
+        <p class=" vote">Voto: {{ integerVote }}</p>
     </div>
 </template>
 
