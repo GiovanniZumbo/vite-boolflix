@@ -49,7 +49,7 @@ export default {
 
 <template>
 
-    <div class="card position-relative top-0 start-0">
+    <div class="card position-relative top-0 start-0 w-100">
         <div class=" card-poster">
             <img :src="posterImage" class="card-img-top" alt="...">
         </div>
@@ -59,7 +59,7 @@ export default {
 
             <p class="lang">Lingua: <span class="fi" :class="languageClass"> </span> </p>
             <p class="vote">Voto: <i class="fa-solid fa-star" v-for="n in integerVote"></i></p>
-            <p class="overview">{{ movie.overview }}</p>
+            <p class="overview">"{{ movie.overview }}"</p>
         </div>
     </div>
 </template>
@@ -72,6 +72,7 @@ export default {
 }
 
 .card {
+    height: 40rem;
     border-radius: 25%;
 
     transition: 0.2s ease-in-out;
@@ -95,7 +96,7 @@ export default {
 
 .card-body {
     transform: rotateY(0.5turn);
-    background-color: rgb(46, 45, 45);
+    background-color: black;
 }
 
 

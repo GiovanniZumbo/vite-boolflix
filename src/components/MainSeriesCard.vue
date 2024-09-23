@@ -58,13 +58,13 @@ export default {
         <div class=" card-poster">
             <img :src="posterImage" class="card-img-top" alt="...">
         </div>
-        <div class="card-body position-absolute top-0 start-0">
+        <div class="card-body position-absolute top-0 start-0 text-light">
             <p class="title">Titolo: "{{ series.name }}" </p>
-            <p class="og-title">Titolo originale: "{{ series.original_name }}</p>
+            <p class="og-title">Titolo originale: "{{ series.original_name }}"</p>
 
             <p class="lang">Lingua: <span class="fi" :class="languageClass"> </span> </p>
             <p class="vote">Voto: <i class="fa-solid fa-star" v-for="n in integerVote"></i></p>
-            <p class="overview">{{ series.overview }}</p>
+            <p class="overview">"{{ series.overview }}"</p>
         </div>
     </div>
 

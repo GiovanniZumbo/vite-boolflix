@@ -34,4 +34,8 @@ export default {
 
 <style lang="scss" scoped>
 @use "../styles/generics.scss" as *;
+
+h3 {
+    color: white;
+}
 </style>

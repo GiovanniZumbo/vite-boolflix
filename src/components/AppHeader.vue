@@ -14,6 +14,7 @@ export default {
     methods: {
         triggerCallDatabase(request) {
             this.$emit('callDatabase', request);
+            this.userRequest = "";
         }
     }
 

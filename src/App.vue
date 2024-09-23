@@ -72,11 +72,12 @@ export default {
 
 <style lang="scss" scoped>
 @use "./styles/generics.scss" as *;
-@use "./styles/variables.scss" as variables;
+@use "./styles/variables.scss" as *;
 
 body {
   min-height: 100vh;
   position: relative;
-  background-color: var(--gray-bg);
+  background-color: #1B1B1B;
+  ;
 }
 </style>
