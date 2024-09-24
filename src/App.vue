@@ -34,6 +34,9 @@ export default {
           this.store.movieList = response.data.results;
           console.log("MOVIES:", this.store.movieList)
         })
+        .catch(function (error) {
+          console.log(error);
+        })
 
       //API call to find the requested series
 
@@ -47,6 +50,9 @@ export default {
         .then(result => {
           this.store.seriesList = result.data.results;
           console.log("SERIES:", this.store.seriesList);
+        })
+        .catch(function (error) {
+          console.log(error);
         })
 
     }
