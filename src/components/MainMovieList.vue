@@ -16,10 +16,9 @@ export default {
     components: {
         MainMovieCard
     },
+
 }
 </script>
-
-
 
 <template>
 

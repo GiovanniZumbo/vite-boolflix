@@ -18,8 +18,9 @@ export default {
         MainMovieList,
         MainSeriesList,
         MainPopularMoviesList
+    },
 
-    }
+
 }
 </script>
 

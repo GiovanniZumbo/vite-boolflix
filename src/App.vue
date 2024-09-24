@@ -12,6 +12,7 @@ export default {
     return {
       moviesUrlApi: "https://api.themoviedb.org/3/search/movie",
       seriesUrlApi: "https://api.themoviedb.org/3/search/tv",
+      popularUrlApi: "https://api.themoviedb.org/3/movie/popular",
       store
     }
   },
@@ -54,7 +55,23 @@ export default {
         .catch(function (error) {
           console.log(error);
         })
+    },
 
+    //API call to find popular movies list
+    getPopularList() {
+      axios.get(this.popularUrlApi, {
+        params: {
+          api_key: "c9c806bca4bbfddd92bba4b4d36d3a53",
+          language: "it-IT",
+        }
+      })
+        .then(result => {
+          this.store.popularMovies = result.data.results;
+          console.log("POPULAR:", this.store.popularMovies);
+        })
+        .catch(function (error) {
+          console.log(error);
+        })
     }
 
   },
@@ -62,6 +79,10 @@ export default {
   components: {
     AppHeader,
     AppMain
+  },
+
+  created() {
+    this.getPopularList()
   }
 }
 </script>
