@@ -58,6 +58,7 @@ export default {
     },
 
     //API call to find popular movies list
+
     getPopularList() {
       axios.get(this.popularUrlApi, {
         params: {
@@ -72,7 +73,7 @@ export default {
         .catch(function (error) {
           console.log(error);
         })
-    }
+    },
 
   },
 

@@ -77,7 +77,7 @@ export default {
 }
 
 .card {
-
+    height: 523px;
     border-radius: 25px;
 
     transition: 0.2s ease-in-out;
@@ -102,6 +102,7 @@ export default {
 .card-body {
     transform: rotateY(0.5turn);
     background-color: black;
+    overflow: hidden;
 }
 
 

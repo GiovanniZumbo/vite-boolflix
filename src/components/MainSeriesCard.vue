@@ -71,9 +71,4 @@ export default {
 
 <style lang="scss">
 @use "../styles/generics.scss" as *;
-
-
-.fi {
-    box-shadow: 0 0 10px gray;
-}
 </style>
