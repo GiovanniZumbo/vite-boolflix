@@ -57,8 +57,9 @@ export default {
             <p class="og-title"><b>Titolo originale</b>: "{{ popularMovie.original_title }}</p>
 
             <p class="lang"><b>Lingua</b>: <span class="fi" :class="languageClass"> </span> </p>
-            <p class="vote"><b>Voto</b>: <i class="fa-solid fa-star" v-for="n in integerVote"></i></p>
-            <p class="overview text-truncate">"{{ popularMovie.overview }}"</p>
+            <p class="vote"><b>Voto</b>: <i class="fa-solid fa-star" v-for="n in integerVote"></i> <i
+                    class="fa-regular fa-star" v-for="n in (5 - integerVote)"></i></p>
+            <p class="overview text-truncate" v-text="popularMovie.overview ? popularMovie.overview : 'N/A'"></p>
         </div>
     </div>
 
