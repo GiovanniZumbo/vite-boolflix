@@ -1,10 +1,16 @@
 <script>
+//axios
 import axios from 'axios';
+//store
+import { store } from '../store';
+
 
 export default {
     data() {
         return {
             castMembers: '',
+            movieGenres: '',
+            store
         }
     },
 
@@ -48,7 +54,10 @@ export default {
 
         castUrlApi() {
             return `https://api.themoviedb.org/3/movie/${this.popularMovie.id}/credits`;
-        }
+        },
+
+
+
     },
 
     mounted() {
@@ -72,6 +81,19 @@ export default {
                 .catch(function (error) {
                     console.log(error);
                 })
+        },
+        //method to get movies genres
+        getGenreNames() {
+            for (let i = 0; i < this.popularMovie.genre_ids.length; i++) {
+                let popularGenre = this.popularMovie.genre_ids[i];
+
+                const filteredGenres = this.store.moviesGenres.filter((genre) => {
+                    return genre.id === popularGenre;
+                })
+
+                this.movieGenres = filteredGenres;
+            }
+            console.log(this.movieGenres)
         }
     }
 }
@@ -86,8 +108,10 @@ export default {
         <div class="card-body position-absolute top-0 start-0 text-light">
             <p class="title"><b>Titolo</b>: "{{ popularMovie.title }}" </p>
             <p class="og-title"><b>Titolo originale</b>: "{{ popularMovie.original_title }}</p>
-
             <p class="lang"><b>Lingua</b>: <span class="fi" :class="languageClass"> </span> </p>
+
+            <p class="genres"><b>Generi</b>: <span v-for="movieGenre in movieGenres">{{ movieGenre }}</span></p>
+
             <p class="cast"><b>Cast</b>: <span v-for="(member, i) in castMembers.slice(0, 5)" :key="i">{{ member.name
                     }}, </span>...</p>
             <p class="vote"><b>Voto</b>: <i class="fa-solid fa-star" v-for="n in integerVote"></i><i

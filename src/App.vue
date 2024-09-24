@@ -13,6 +13,7 @@ export default {
       moviesUrlApi: "https://api.themoviedb.org/3/search/movie",
       seriesUrlApi: "https://api.themoviedb.org/3/search/tv",
       popularUrlApi: "https://api.themoviedb.org/3/movie/popular",
+      moviesGenresUrl: "https://api.themoviedb.org/3/genre/movie/list",
       store
     }
   },
@@ -23,7 +24,7 @@ export default {
 
       console.log(requestquery);
 
-      //API call to find the requested movies
+      //API call to get the requested movies
       axios.get(this.moviesUrlApi, {
         params: {
           api_key: "c9c806bca4bbfddd92bba4b4d36d3a53",
@@ -39,7 +40,7 @@ export default {
           console.log(error);
         })
 
-      //API call to find the requested series
+      //API call to get the requested series
 
       axios.get(this.seriesUrlApi, {
         params: {
@@ -57,7 +58,7 @@ export default {
         })
     },
 
-    //API call to find popular movies list
+    //API call to get popular movies list
 
     getPopularList() {
       axios.get(this.popularUrlApi, {
@@ -73,7 +74,24 @@ export default {
         .catch(function (error) {
           console.log(error);
         })
-    },
+    }
+
+    //call to get movies genres
+    // getMoviesGenres() {
+    //   axios.get(this.moviesGenresUrl, {
+    //     params: {
+    //       api_key: "c9c806bca4bbfddd92bba4b4d36d3a53",
+    //       language: "it-IT",
+    //     }
+    //   })
+    //     .then(result => {
+    //       this.store.moviesGenres = result.data.genres;
+    //       console.log("Movies Genres:", this.store.moviesGenres);
+    //     })
+    //     .catch(function (error) {
+    //       console.log(error);
+    //     })
+    // },
 
   },
 
@@ -83,7 +101,8 @@ export default {
   },
 
   created() {
-    this.getPopularList()
+    this.getPopularList();
+    // this.getMoviesGenres();
   }
 }
 </script>

@@ -1,6 +1,4 @@
 import { reactive, useTemplateRef } from 'vue'
-// //axios
-// import axios from 'axios';
 
 export const store = reactive({
     data(){
@@ -8,6 +6,9 @@ export const store = reactive({
                 movieList: "",
                 seriesList: "",
                 popularMovies: '',
+                moviesGenres: '',
+                seriesGenres: '',
+
         }
     },
 

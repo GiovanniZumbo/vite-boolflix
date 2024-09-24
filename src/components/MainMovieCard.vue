@@ -123,6 +123,7 @@ export default {
 
     &:hover {
         transform: rotateY(0.5turn);
+        transition-duration: 0.5s;
     }
 }
 
@@ -143,8 +144,6 @@ export default {
         display: none;
     }
 }
-
-
 
 .fi {
     box-shadow: 0 0 10px gray;

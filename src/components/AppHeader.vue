@@ -26,12 +26,12 @@ export default {
 
     <nav id="header" class="navbar position-sticky top-0 start-0">
         <div class="container-fluid d-flex justify-content-between">
-            <img src="/src/assets/logo_boolflix.png" alt="">
+            <a href="./AppMain.vue"><img src="/src/assets/logo_boolflix.png" alt=""></a>
             <div class="d-flex" id="header-right">
-                <input class="form-control me-2" type="text" placeholder="Search..." v-model.trim="userRequest"
+                <input class="form-control me-2" type="text" placeholder="Cerca..." v-model.trim="userRequest"
                     @keyup.enter="triggerCallDatabase(userRequest)">
                 <button class="btn btn-outline-danger bg-danger text-light me-2" type="button"
-                    @click="triggerCallDatabase(userRequest)">Search</button>
+                    @click="triggerCallDatabase(userRequest)">Cerca</button>
                 <button class="btn btn-outline-danger bg-danger text-light ms-4 fw-bold" type="button">Login</button>
 
             </div>
