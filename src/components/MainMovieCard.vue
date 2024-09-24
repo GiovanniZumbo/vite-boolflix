@@ -60,7 +60,7 @@ export default {
 
             <p class="lang"><b>Lingua</b>: <span class="fi" :class="languageClass"> </span> </p>
             <p class="vote"><b>Voto</b>: <i class="fa-solid fa-star" v-for="n in integerVote"></i></p>
-            <p class="overview">"{{ movie.overview }}"</p>
+            <p class="overview text-truncate">"{{ movie.overview }}"</p>
         </div>
     </div>
 </template>

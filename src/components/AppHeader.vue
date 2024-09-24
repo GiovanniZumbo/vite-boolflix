@@ -30,8 +30,10 @@ export default {
             <div class="d-flex" id="header-right">
                 <input class="form-control me-2" type="text" placeholder="Search..." v-model="userRequest"
                     @keyup.enter="triggerCallDatabase(userRequest)">
-                <button class="btn btn-outline-danger bg-danger text-light" type="button"
+                <button class="btn btn-outline-danger bg-danger text-light me-2" type="button"
                     @click="triggerCallDatabase(userRequest)">Search</button>
+                <button class="btn btn-outline-danger bg-danger text-light ms-4 fw-bold" type="button">Login</button>
+
             </div>
         </div>
     </nav>

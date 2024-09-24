@@ -46,9 +46,6 @@ export default {
         }
     }
 
-
-
-
 }
 </script>
 
@@ -65,7 +62,7 @@ export default {
 
             <p class="lang"><b>Lingua</b>: <span class="fi" :class="languageClass"> </span> </p>
             <p class="vote"><b>Voto</b>: <i class="fa-solid fa-star" v-for="n in integerVote"></i></p>
-            <p class="overview">"{{ series.overview }}"</p>
+            <p class="overview text-truncate">"{{ series.overview }}"</p>
         </div>
     </div>
 
@@ -74,11 +71,6 @@ export default {
 <style lang="scss">
 @use "../styles/generics.scss" as *;
 
-.overview {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
 
 .fi {
     box-shadow: 0 0 10px gray;
