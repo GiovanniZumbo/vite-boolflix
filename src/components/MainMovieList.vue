@@ -22,7 +22,7 @@ export default {
 
 <template>
 
-    <h2>MOVIES </h2>
+    <h3 class="text-light ms-2 mb-4">MOVIES</h3>
 
     <div v-if="store.movieList.length > 0">
         <div class="cardlist d-flex row row-cols-5 g-3 mb-5">
@@ -37,10 +37,10 @@ export default {
     </div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @use "../styles/generics.scss" as *;
 
-h2 {
+h3 {
     color: white;
 }
 </style>

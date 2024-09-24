@@ -21,7 +21,7 @@ export default {
 </script>
 
 <template>
-    <h3>SERIES</h3>
+    <h3 class="text-light ms-2 mb-4">SERIES</h3>
 
     <div v-if="store.seriesList.length > 0">
         <div class="cardlist d-flex row row-cols-5 g-3">
@@ -37,8 +37,4 @@ export default {
 
 <style lang="scss" scoped>
 @use "../styles/generics.scss" as *;
-
-h3 {
-    color: white;
-}
 </style>

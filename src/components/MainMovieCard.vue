@@ -1,8 +1,9 @@
 <script>
+import axios from 'axios';
 export default {
     data() {
         return {
-
+            castMembers: '',
         }
     },
 
@@ -27,8 +28,10 @@ export default {
                     return "fi-kr";
                 case "zh":
                     return "fi-cn";
-                case "hi", "fa":
-                    return "fi-xx"
+                case "hi":
+                    return "fi-in";
+                case "fa":
+                    return "fi-xx";
 
                 default:
                     return `fi-${this.movie.original_language}`;
@@ -42,8 +45,38 @@ export default {
 
         integerVote() {
             return Math.ceil(this.movie.vote_average / 2);
+        },
+
+        castUrlApi() {
+            return `https://api.themoviedb.org/3/movie/${this.movie.id}/credits`;
         }
     },
+
+    mounted() {
+        if (this.movie) {
+            this.getCast();
+        }
+    },
+
+    methods: {
+
+        //API call to get the cast members
+        getCast() {
+            axios.get(this.castUrlApi, {
+                params: {
+                    api_key: "c9c806bca4bbfddd92bba4b4d36d3a53",
+                    language: "it-IT",
+                }
+            })
+                .then(result => {
+                    this.castMembers = result.data.cast;
+                })
+                .catch(function (error) {
+                    console.log(error);
+                })
+
+        }
+    }
 }
 </script>
 
@@ -59,10 +92,12 @@ export default {
             <p class="og-title"><b>Titolo originale</b>: "{{ movie.original_title }}</p>
 
             <p class="lang"><b>Lingua</b>: <span class="fi" :class="languageClass"> </span> </p>
+            <p class="cast"><b>Cast</b>: <span v-for="(member, i) in castMembers.slice(0, 5)" :key="i">{{ member.name
+                    }}, </span>...</p>
             <p class="vote"><b>Voto</b> : <i class="fa-solid fa-star" v-for="n in integerVote"></i><i
                     class="fa-regular fa-star" v-for="n in (5 - integerVote)"></i></p>
             <div>
-                <p class="overview text-truncate" v-text="movie.overview ? movie.overview : 'N/A'">
+                <p class="overview" v-text="movie.overview ? movie.overview : 'N/A'">
                 </p>
             </div>
         </div>
@@ -102,8 +137,13 @@ export default {
 .card-body {
     transform: rotateY(0.5turn);
     background-color: black;
-    overflow: hidden;
+    overflow: scroll;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }
+
 
 
 .fi {

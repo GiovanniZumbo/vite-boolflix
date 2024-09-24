@@ -28,7 +28,7 @@ export default {
         <div class="container-fluid d-flex justify-content-between">
             <img src="/src/assets/logo_boolflix.png" alt="">
             <div class="d-flex" id="header-right">
-                <input class="form-control me-2" type="text" placeholder="Search..." v-model="userRequest"
+                <input class="form-control me-2" type="text" placeholder="Search..." v-model.trim="userRequest"
                     @keyup.enter="triggerCallDatabase(userRequest)">
                 <button class="btn btn-outline-danger bg-danger text-light me-2" type="button"
                     @click="triggerCallDatabase(userRequest)">Search</button>

@@ -28,8 +28,10 @@ export default {
                     return "fi-kr";
                 case "zh":
                     return "fi-cn";
-                case "hi", "fa":
-                    return "fi-xx"
+                case "hi":
+                    return "fi-in";
+                case "fa":
+                    return "fi-xx";
 
                 default:
                     return `fi-${this.popularMovie.original_language}`;
@@ -66,7 +68,6 @@ export default {
             })
                 .then(result => {
                     this.castMembers = result.data.cast;
-                    console.log("POPMOVIE CAST", this.castMembers)
                 })
                 .catch(function (error) {
                     console.log(error);
@@ -89,9 +90,9 @@ export default {
             <p class="lang"><b>Lingua</b>: <span class="fi" :class="languageClass"> </span> </p>
             <p class="cast"><b>Cast</b>: <span v-for="(member, i) in castMembers.slice(0, 5)" :key="i">{{ member.name
                     }}, </span>...</p>
-            <p class="vote"><b>Voto</b>: <i class="fa-solid fa-star" v-for="n in integerVote"></i> <i
+            <p class="vote"><b>Voto</b>: <i class="fa-solid fa-star" v-for="n in integerVote"></i><i
                     class="fa-regular fa-star" v-for="n in (5 - integerVote)"></i></p>
-            <p class="overview text-truncate" v-text="popularMovie.overview ? popularMovie.overview : 'N/A'"></p>
+            <p class="overview" v-text="popularMovie.overview ? popularMovie.overview : 'N/A'"></p>
         </div>
     </div>
 

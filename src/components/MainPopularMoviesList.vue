@@ -21,7 +21,7 @@ export default {
 
 <template>
 
-    <h3 class="text-light">FILM POPOLARI ADESSO</h3>
+    <h3 class="text-light ms-2 mb-4">FILM POPOLARI ADESSO</h3>
 
     <div class="cardlist d-flex row row-cols-5 g-3 mb-5">
         <div class="col" v-for="popularMovie in store.popularMovies">
